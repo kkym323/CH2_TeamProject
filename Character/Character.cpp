@@ -20,7 +20,8 @@ void ACharacter::Attack()
 
 void ACharacter::TakeDamage(int DamageAmount)
 {
-    Hp -= DamageAmount;
+    Hp = Hp - DamageAmount;
 
     cout << Name << "가 " << DamageAmount << "의 피해를 입었습니다." << endl;
+    cout << "   -> 남은 체력: " << Hp << endl;
 }
