@@ -4,8 +4,8 @@
 
 int main()
 {
-    ACharacter* Player = new ACharacter("나의 용사", 200, 15);
-    ACharacter* Monster = new ACharacter("무서운 오크", 100, 10);
+    ACharacter* Player = new ACharacter("나의 용사", 200, 15, 5, 10);
+    ACharacter* Monster = new ACharacter("무서운 오크", 100, 10, 5, 10);
 
     cout << "===  데스매치 시작!  ===" << endl;
     Sleep(1000);
