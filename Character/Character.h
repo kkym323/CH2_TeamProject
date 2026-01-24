@@ -20,6 +20,8 @@ protected:
 public:
     void Attack(ACharacter* Target);
     void TakeDamage(int DamageAmount);
+    
+    //간단한 게터는 헤더에서 구현하는 것을 권장.
     int GetHp();
     bool IsDead();
 };

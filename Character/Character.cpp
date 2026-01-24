@@ -35,6 +35,7 @@ void ACharacter::Attack(ACharacter* Target)
 {
     if (getRandomInt() <= 10)
     {
+        //오타 수정
         int Crtical_Atk = Atk * 15 / 10;
         cout << Name << "가 공격합니다![크리티컬!] (공격력: " << Crtical_Atk << ")" << endl;
         Target->TakeDamage(Crtical_Atk);
@@ -44,7 +45,8 @@ void ACharacter::Attack(ACharacter* Target)
         cout << Name << "가 공격합니다! (공격력: " << Atk << ")" << endl;
         Target->TakeDamage(Atk);
     }
-
+    
+    //if else 바깥에서 takedamage 호출해서 통일 가능.
 }
 
 void ACharacter::TakeDamage(int DamageAmount)
@@ -54,11 +56,13 @@ void ACharacter::TakeDamage(int DamageAmount)
         DamageAmount = 0;
         cout << Name << "가 " << DamageAmount << "의 피해를 입었습니다." << endl;
         cout << "   -> 남은 체력: " << Hp << endl;
+        //early return 권장.
     }
     else
     {
         int Damage = DamageAmount - Def;
         Hp = Hp - Damage;
+        //std::max() 로 교체 가능.
         if (Hp < 0)
         {
             Hp = 0;
