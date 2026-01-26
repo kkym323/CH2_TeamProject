@@ -4,18 +4,23 @@
 
 using namespace std;
 
-class ACharacter
+struct FUnitStat
 {
-public:
-    ACharacter(string NewName, int NewHp, int NewAtk, int NewDef, int NewCritical);
-    ~ACharacter();
-
-protected:
-    string Name;
     int Hp;
     int Atk;
     int Def;
     int Critical;
+};
+
+class ACharacter
+{
+public:
+    ACharacter(string NewName, const FUnitStat& NewStat);
+    ~ACharacter();
+
+protected:
+    string Name;
+    FUnitStat Stat;
 
 public:
     void Attack(ACharacter* Target);
