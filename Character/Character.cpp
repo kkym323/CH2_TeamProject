@@ -1,4 +1,4 @@
-#include "Character.h"
+﻿#include "Character.h"
 #include <random>
 
 int getRandomInt()

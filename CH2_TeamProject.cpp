@@ -1,13 +1,13 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include "Character/Character.h"
 
 
 int main()
 {
-    ACharacter* Player = new ACharacter("³ªÀÇ ¿ë»ç", 200, 15, 5, 10);
-    ACharacter* Monster = new ACharacter("¹«¼­¿î ¿ÀÅ©", 100, 10, 5, 10);
+    ACharacter* Player = new ACharacter("ë‚˜ì˜ ìš©ì‚¬", 200, 15, 5, 10);
+    ACharacter* Monster = new ACharacter("ë¬´ì„œìš´ ì˜¤í¬", 100, 10, 5, 10);
 
-    cout << "===  µ¥½º¸ÅÄ¡ ½ÃÀÛ!  ===" << endl;
+    cout << "===  ë°ìŠ¤ë§¤ì¹˜ ì‹œì‘!  ===" << endl;
     Sleep(1000);
 
     while (!Player->IsDead() && !Monster->IsDead())
@@ -16,7 +16,7 @@ int main()
 
         if (Monster->IsDead())
         {
-            cout << "¸ó½ºÅÍ°¡ ¾²·¯Á³½À´Ï´Ù! ½Â¸®!" << endl;
+            cout << "ëª¬ìŠ¤í„°ê°€ ì“°ëŸ¬ì¡ŒìŠµë‹ˆë‹¤! ìŠ¹ë¦¬!" << endl;
             break;
         }
 
@@ -26,7 +26,7 @@ int main()
 
         if (Player->IsDead())
         {
-            cout << "ÇÃ·¹ÀÌ¾î°¡ ¾²·¯Á³½À´Ï´Ù... ÆĞ¹è..." << endl;
+            cout << "í”Œë ˆì´ì–´ê°€ ì“°ëŸ¬ì¡ŒìŠµë‹ˆë‹¤... íŒ¨ë°°..." << endl;
             break;
         }
 
