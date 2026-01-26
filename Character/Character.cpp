@@ -3,13 +3,13 @@
 
 int getRandomInt()
 {
-    // ½Ãµå°ª »ý¼º±â (ÇÑ ¹ø¸¸ ÃÊ±âÈ­ÇÏ±â À§ÇØ static »ç¿ë)
+    // ï¿½Ãµå°ª ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ static ï¿½ï¿½ï¿½)
     static std::random_device rd;
 
-    // ¸Þ¸£¼¾ Æ®À§½ºÅÍ ¿£Áø (°íÇ°Áú ³­¼ö »ý¼º±â)
+    // ï¿½Þ¸ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
     static std::mt19937 gen(rd());
 
-    // 0ºÎÅÍ 100±îÁö ±ÕµîÇÏ°Ô ºÐÆ÷ (¾ç ³¡°ª Æ÷ÇÔ)
+    // 0ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ï¿½ï¿½ ï¿½Õµï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
     std::uniform_int_distribution<int> dis(0, 100);
 
     return dis(gen);
@@ -23,30 +23,30 @@ ACharacter::ACharacter(string NewName, int NewHp, int NewAtk, int NewDef, int Ne
     Def = NewDef;
     Critical = NewCritical;
 
-    cout << "[»ý¼º] " << Name << "°¡ ÀüÀå¿¡ ³ªÅ¸³µ½À´Ï´Ù! (HP: " << Hp << ")" << endl;
+    cout << "[ï¿½ï¿½ï¿½ï¿½] " << Name << "ï¿½ï¿½ ï¿½ï¿½ï¿½å¿¡ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½! (HP: " << Hp << ")" << endl;
 }
 
 ACharacter::~ACharacter()
 {
-    cout << "ACharacter ¼Ò¸êµÊ" << endl;
+    cout << "ACharacter ï¿½Ò¸ï¿½ï¿½" << endl;
 }
 
 void ACharacter::Attack(ACharacter* Target)
 {
     if (getRandomInt() <= 10)
     {
-        //¿ÀÅ¸ ¼öÁ¤
+        //ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½
         int Crtical_Atk = Atk * 15 / 10;
-        cout << Name << "°¡ °ø°ÝÇÕ´Ï´Ù![Å©¸®Æ¼ÄÃ!] (°ø°Ý·Â: " << Crtical_Atk << ")" << endl;
+        cout << Name << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½![Å©ï¿½ï¿½Æ¼ï¿½ï¿½!] (ï¿½ï¿½ï¿½Ý·ï¿½: " << Crtical_Atk << ")" << endl;
         Target->TakeDamage(Crtical_Atk);
     }
     else
     {
-        cout << Name << "°¡ °ø°ÝÇÕ´Ï´Ù! (°ø°Ý·Â: " << Atk << ")" << endl;
+        cout << Name << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½! (ï¿½ï¿½ï¿½Ý·ï¿½: " << Atk << ")" << endl;
         Target->TakeDamage(Atk);
     }
     
-    //if else ¹Ù±ù¿¡¼­ takedamage È£ÃâÇØ¼­ ÅëÀÏ °¡´É.
+    //if else ï¿½Ù±ï¿½ï¿½ï¿½ï¿½ï¿½ takedamage È£ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 }
 
 void ACharacter::TakeDamage(int DamageAmount)
@@ -54,21 +54,21 @@ void ACharacter::TakeDamage(int DamageAmount)
     if (Def >= DamageAmount)
     {
         DamageAmount = 0;
-        cout << Name << "°¡ " << DamageAmount << "ÀÇ ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù." << endl;
-        cout << "   -> ³²Àº Ã¼·Â: " << Hp << endl;
-        //early return ±ÇÀå.
+        cout << Name << "ï¿½ï¿½ " << DamageAmount << "ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¸ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." << endl;
+        cout << "   -> ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½: " << Hp << endl;
+        //early return ï¿½ï¿½ï¿½ï¿½.
     }
     else
     {
         int Damage = DamageAmount - Def;
         Hp = Hp - Damage;
-        //std::max() ·Î ±³Ã¼ °¡´É.
+        //std::max() ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½.
         if (Hp < 0)
         {
             Hp = 0;
         }
-        cout << Name << "°¡ " << Damage << "ÀÇ ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù." << endl;
-        cout << "   -> ³²Àº Ã¼·Â: " << Hp << endl;
+        cout << Name << "ï¿½ï¿½ " << Damage << "ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¸ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." << endl;
+        cout << "   -> ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½: " << Hp << endl;
         
     }
 }
