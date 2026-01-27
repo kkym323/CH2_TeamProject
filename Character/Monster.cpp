@@ -1,6 +1,11 @@
 ﻿#include "Monster.h"
 
-Monster::Monster
+Monster::Monster(const string& NewName, const FUnitStat& NewStat)
 {
-	Name = 
+
+}
+
+Monster::~Monster()
+{
+
 }

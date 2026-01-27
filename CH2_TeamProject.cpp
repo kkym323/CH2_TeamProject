@@ -1,5 +1,7 @@
 ﻿#include <Windows.h>
 #include "Character/Character.h"
+#include "Player.h"
+#include "Monster.h"
 
 //Monster  그냥 상속해서 구현
 
