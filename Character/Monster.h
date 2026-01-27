@@ -1,10 +1,9 @@
 ﻿#pragma once
 #include "Character.h"
 
-class Monster : public ACharacter
+class AMonster : public ACharacter
 {
 public:
-    Monster(const string& NewName, const FUnitStat& NewStat);
-    virtual ~Monster();
+    AMonster(const string& NewName, const FUnitStat& NewStat);
 };
 

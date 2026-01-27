@@ -1,7 +1,7 @@
 ﻿#include <Windows.h>
 #include "Character/Character.h"
-#include "Player.h"
-#include "Monster.h"
+#include "Character/Player.h"
+#include "Character/Monster.h"
 
 //Monster  그냥 상속해서 구현
 
@@ -18,8 +18,8 @@ int main()
     PlayerStat.Def = 5;
     PlayerStat.Critical = 10;
 
-    ACharacter* Player = new ACharacter("나의 용사", PlayerStat);
-    ACharacter* Monster = new ACharacter("무서운 오크", { 100, 10, 5, 10 });
+    ACharacter* Player = new APlayer("나의 용사", PlayerStat);
+    ACharacter* Monster = new AMonster("무서운 오크", { 100, 10, 5, 10 });
 
     cout << "===  데스매치 시작!  ===" << endl;
     Sleep(1000);
@@ -49,5 +49,6 @@ int main()
 
     delete Player;
     delete Monster;
+    
     return 0;
 }

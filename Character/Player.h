@@ -1,11 +1,10 @@
 ﻿#pragma once
 #include "Character.h"
 
-class Player : public ACharacter
+class APlayer : public ACharacter
 {
 public:
-	Player(const string& NewName, const FUnitStat& NewStat);
-	virtual ~Player();
+	APlayer(const string& NewName, const FUnitStat& NewStat);
 
 private:
 	int Level;
@@ -14,6 +13,5 @@ private:
 public:
 	void UseItem();
 	void LevelUp();
-
 };
 

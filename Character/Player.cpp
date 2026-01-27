@@ -1,20 +1,18 @@
 ﻿#include "Player.h"
 
-Player::Player(const string& NewName, const FUnitStat& NewStat)
+APlayer::APlayer(const string& NewName, const FUnitStat& NewStat)
+	: ACharacter(NewName, NewStat)
 {
-
-}
-Player::~Player()
-{
-
+	Level = 1;
+	Exp = 0;
 }
 
-void UseItem()
+void APlayer::UseItem()
 {
-
+	
 }
 
-void LevelUp()
+void APlayer::LevelUp()
 {
 
 }
