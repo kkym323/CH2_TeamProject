@@ -1,6 +1,12 @@
 ﻿#include <Windows.h>
 #include "Character/Character.h"
 
+//Monster  그냥 상속해서 구현
+
+//Player는 
+// 멤버변수: Level, Exp
+// 멤버함수: UseItem(), LevelUp() - 빈 구현
+
 
 int main()
 {

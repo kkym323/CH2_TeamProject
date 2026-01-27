@@ -15,8 +15,8 @@ struct FUnitStat
 class ACharacter
 {
 public:
-    ACharacter(string NewName, const FUnitStat& NewStat);
-    ~ACharacter();
+    ACharacter(const string& NewName, const FUnitStat& NewStat);
+    virtual ~ACharacter();
 
 protected:
     string Name;
@@ -26,7 +26,9 @@ public:
     void Attack(ACharacter* Target);
     void TakeDamage(int DamageAmount);
     
-    //간단한 게터는 헤더에서 구현하는 것을 권장.
-    int GetHp();
-    bool IsDead();
+    int GetHp() { return Stat.Hp; }
+    bool IsDead() { return Stat.Hp <= 0; }
+    
+private:
+    int GetRandomInt();
 };
