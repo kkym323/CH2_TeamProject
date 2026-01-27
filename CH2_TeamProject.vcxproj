@@ -125,9 +125,13 @@
   <ItemGroup>
     <ClCompile Include="CH2_TeamProject.cpp" />
     <ClCompile Include="Character\Character.cpp" />
+    <ClCompile Include="Character\Monster.cpp" />
+    <ClCompile Include="Character\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character\Character.h" />
+    <ClInclude Include="Character\Monster.h" />
+    <ClInclude Include="Character\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
