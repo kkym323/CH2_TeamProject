@@ -24,7 +24,6 @@ void ACharacter::Attack(ACharacter* Target)
         cout << "크리티컬...!! ";
     }
     
-    cout << Name << "가 공격합니다! (공격력: " << Damage << ")" << endl;
     Target->TakeDamage(Damage);
 }
 
