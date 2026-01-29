@@ -23,7 +23,7 @@ protected:
     FUnitStat Stat;
 
 public:
-    void Attack(ACharacter* Target);
+    virtual void Attack(ACharacter* Target);
     void TakeDamage(int DamageAmount);
     
     int GetHp() { return Stat.Hp; }
