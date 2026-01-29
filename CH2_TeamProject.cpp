@@ -12,14 +12,9 @@
 
 int main()
 {
-    FUnitStat PlayerStat;
-    PlayerStat.Hp = 200;
-    PlayerStat.Atk = 15;
-    PlayerStat.Def = 5;
-    PlayerStat.Critical = 10;
 
-    ACharacter* Player = new APlayer("나의 용사", PlayerStat);
-    ACharacter* Monster = new AMonster("무서운 오크", { 100, 10, 5, 10 });
+    ACharacter* Player = new APlayer("나의 용사", {200, 50, 30, 5, 10});
+    ACharacter* Monster = new AMonster("무서운 오크", { 100, 30, 20, 3, 10 });
 
     cout << "===  데스매치 시작!  ===" << endl;
     Sleep(1000);

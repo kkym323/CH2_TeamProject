@@ -7,6 +7,9 @@ ACharacter::ACharacter(const string& NewName, const FUnitStat& NewStat)
     Name = NewName;
     Stat = NewStat;
 
+    Stat.Hp = Stat.MaxHp;
+    Stat.Mp = Stat.MaxMp;
+
     cout << "[생성] " << Name << "가 전장에 나타났습니다! (HP: " << Stat.Hp << ")" << endl;
 }
 
@@ -38,7 +41,7 @@ int ACharacter::TakeDamage(int DamageAmount)
     
     Stat.Hp = Stat.Hp - Damage;
     Stat.Hp = max(Stat.Hp , 0);
-    return DamageAmount;
+    return Damage;
 }
 
 int ACharacter::GetRandomInt()

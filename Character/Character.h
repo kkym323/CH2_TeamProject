@@ -6,10 +6,28 @@ using namespace std;
 
 struct FUnitStat
 {
-    int Hp;
+    int MaxHp;
+    int MaxMp;
     int Atk;
     int Def;
     int Critical;
+
+    int Hp = 0;
+    int Mp = 0;
+
+    FUnitStat()
+    {
+    }
+
+    FUnitStat(int MaxHp, int MaxMp, int Atk, int Def, int Critical)
+    {
+        this->MaxHp = MaxHp;
+        this->MaxMp = MaxMp;
+
+        this->Atk = Atk;
+        this->Def = Def;
+        this->Critical = Critical;
+    }
 };
 
 struct FDamageResult
