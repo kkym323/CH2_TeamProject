@@ -5,7 +5,7 @@ class APlayer : public ACharacter
 {
 public:
 	APlayer(const string& NewName, const FUnitStat& NewStat);
-	void Attack(ACharacter* Target) override;
+	FDamageResult Attack(ACharacter* Target) override;
 
 private:
 	int Level;
