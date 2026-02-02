@@ -10,15 +10,30 @@ APlayer::APlayer(const string& NewName, const FUnitStat& NewStat)
 FDamageResult APlayer::Attack(ACharacter* Target)
 {
     FDamageResult result = ACharacter::Attack(Target);
-    string AttackMessage = "이(가)  검을 휘두릅니다! ";
+    string AttackMessage = "이(가) 검을 휘두릅니다! ";
     if (result.bCritical)
     {
         AttackMessage = "이(가) *급소*를 베었습니다! ";
     }
 
-    cout << "스르륵.. " << Name << AttackMessage << "[데미지: " << result.Damage << "]" << endl;
-    cout << Target->GetName() << "의 HP: " << Target->GetHp() << endl;
+    result.PrintMessage(AttackMessage);
     return result;
+}
+
+void APlayer::UseSkill(ACharacter* Target)
+{
+    FDamageResult result;
+    result.Attacker = this;
+    result.Target = Target;
+    result.bCritical = false;
+
+    int Damage = Stat.Atk;
+    if (Stat.Mp < 10) 
+    { 
+        return; 
+    }
+    Stat.Mp -= 10;
+    ACharacter::TakeDamage(Damage * 2);
 }
 
 void APlayer::UseItem()
