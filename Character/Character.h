@@ -57,6 +57,8 @@ public:
     virtual FDamageResult Attack(ACharacter* Target);
     int TakeDamage(int DamageAmount);
     virtual void UseSkill(ACharacter* Target) = 0;
+    void PlayTurn(ACharacter* Target);
+    void Heal(int Amount);
     
     int GetHp() { return Stat.Hp; }
     bool IsDead() { return Stat.Hp <= 0; }

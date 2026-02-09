@@ -27,12 +27,9 @@ void AMonster::UseSkill(ACharacter* Target)
 	result.Target = Target;
 	result.bCritical = false;
 
-	int Damage = Stat.Atk;
-	if (Stat.Mp < 10)
-	{
-		return;
-	}
-	Stat.Mp -= 10;
-	Stat.Hp += ACharacter::TakeDamage(Damage);
-	min(Stat.Hp, Stat.MaxHp); // 210 200
+	int FinalDamage = Target->TakeDamage(Stat.Atk);
+	result.Damage = FinalDamage;
+
+	result.PrintMessage("이(가) 스킬을 사용했습니다! ");
+	Heal(FinalDamage);
 }

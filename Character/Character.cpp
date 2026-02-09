@@ -38,12 +38,12 @@ FDamageResult ACharacter::Attack(ACharacter* Target)
 
 int ACharacter::TakeDamage(int DamageAmount)
 {
-    int Damage = DamageAmount - Stat.Def;
-    Damage = max(Damage, 0);
+    DamageAmount = DamageAmount - Stat.Def;
+    DamageAmount = max(DamageAmount, 0);
     
-    Stat.Hp = Stat.Hp - Damage;
+    Stat.Hp = Stat.Hp - DamageAmount;
     Stat.Hp = max(Stat.Hp , 0);
-    return Damage;
+    return DamageAmount;
 }
 
 void UseSkill(ACharacter* Target)
@@ -58,7 +58,7 @@ void FDamageResult::PrintMessage(const string& AttackMessage)
     cout << AttackMessage << '\n';
 
     Target->PrintName();
-    cout << "'받은 데미지': " << Damage << "-> '남은 HP': " << Target->GetHp() << "/" << Target->GetMaxHp() << endl;
+    cout << "받은 데미지 : " << Damage << " | 남은 HP : " << Target->GetHp() << "/" << Target->GetMaxHp() << endl;
     cout << "-------------------------------------------------" << endl;
 }
 
@@ -79,4 +79,32 @@ int ACharacter::GetRandomInt()
     std::uniform_int_distribution<int> dis(0, 100);
 
     return dis(gen);
+}
+
+void ACharacter::PlayTurn(ACharacter* Target)
+{
+    const int SkillMp = 10;
+    
+    if (GetRandomInt() <= 30)
+    {
+        if (Stat.Mp < SkillMp)
+        {
+            Attack(Target);
+            return;
+        }
+        Stat.Mp -= SkillMp;
+        UseSkill(Target);
+        return;
+    }
+    Attack(Target);
+}
+
+void ACharacter::Heal(int Amount)
+{
+    int BeforeHp = Stat.Hp;
+    Stat.Hp += Amount;
+    Stat.Hp = min(Stat.Hp, Stat.MaxHp);
+    int ActualHeal = Stat.Hp - BeforeHp;
+
+    cout << ActualHeal << "만큼 회복했습니다." << endl;
 }

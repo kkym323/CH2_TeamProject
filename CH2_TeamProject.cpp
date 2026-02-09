@@ -2,13 +2,13 @@
 #include "Character/Character.h"
 #include "Character/Player.h"
 #include "Character/Monster.h"
+using namespace std;
 
-//Monster  그냥 상속해서 구현
-
-//Player는 
-// 멤버변수: Level, Exp
-// 멤버함수: UseItem(), LevelUp() - 빈 구현
-
+void WaitForPlayerInput()
+{
+    system("pause");
+    cout << endl;
+}
 
 int main()
 {
@@ -17,11 +17,11 @@ int main()
     ACharacter* Monster = new AMonster("무서운 오크", { 100, 30, 20, 3, 10 });
 
     cout << "===  데스매치 시작!  ===" << endl;
-    Sleep(1000);
+    WaitForPlayerInput();
 
     while (!Player->IsDead() && !Monster->IsDead())
     {
-        Player->Attack(Monster);
+        Player->PlayTurn(Monster);
 
         if (Monster->IsDead())
         {
@@ -29,9 +29,9 @@ int main()
             break;
         }
 
-        Sleep(500);
+        WaitForPlayerInput();
 
-        Monster->Attack(Player);
+        Monster->PlayTurn(Player);
 
         if (Player->IsDead())
         {
@@ -39,7 +39,7 @@ int main()
             break;
         }
 
-        Sleep(1000);
+        WaitForPlayerInput();
     }
 
     delete Player;

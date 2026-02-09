@@ -27,13 +27,9 @@ void APlayer::UseSkill(ACharacter* Target)
     result.Target = Target;
     result.bCritical = false;
 
-    int Damage = Stat.Atk;
-    if (Stat.Mp < 10) 
-    { 
-        return; 
-    }
-    Stat.Mp -= 10;
-    ACharacter::TakeDamage(Damage * 2);
+    int FinalDamage = Target->TakeDamage(Stat.Atk * 2);
+    result.Damage = FinalDamage;
+    result.PrintMessage("이(가) 스킬을 사용했습니다! ");
 }
 
 void APlayer::UseItem()
