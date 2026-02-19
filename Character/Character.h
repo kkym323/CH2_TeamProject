@@ -59,6 +59,7 @@ public:
     virtual void UseSkill(ACharacter* Target) = 0;
     void PlayTurn(ACharacter* Target);
     void Heal(int Amount);
+    void ShowStat();
     
     int GetHp() { return Stat.Hp; }
     bool IsDead() { return Stat.Hp <= 0; }

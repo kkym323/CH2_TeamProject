@@ -81,6 +81,11 @@ int ACharacter::GetRandomInt()
     return dis(gen);
 }
 
+void ACharacter::ShowStat()
+{
+    cout << "[" << GetName() << "] HP: " << Stat.Hp << " / " << Stat.MaxHp << " | MP: " << Stat.Mp << " / " << Stat.MaxMp << endl;
+}
+
 void ACharacter::PlayTurn(ACharacter* Target)
 {
     const int SkillMp = 10;
