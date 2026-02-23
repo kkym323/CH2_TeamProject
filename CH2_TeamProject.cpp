@@ -15,8 +15,8 @@ int main()
 	FUnitStat PlayerStat(200, 50, 30, 5, 10);
 	FUnitStat MonsterStat(100, 30, 20, 3, 10);
 
-	auto Player = make_unique<APlayer>("용사", PlayerStat);
-	auto Monster = make_unique<AMonster>("몬스터", MonsterStat);
+	unique_ptr<ACharacter> Player = make_unique<APlayer>("용사", PlayerStat);
+	unique_ptr<ACharacter> Monster = make_unique<AMonster>("몬스터", MonsterStat);
 
 	cout << "===  데스매치 시작!  ===" << endl;
 

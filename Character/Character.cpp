@@ -88,20 +88,14 @@ void ACharacter::ShowStat()
 
 void ACharacter::PlayTurn(ACharacter* Target)
 {
-    const int SkillMp = 10;
-    
-    if (GetRandomInt() <= 30)
+    if (GetRandomInt() < 50)
     {
-        if (Stat.Mp < SkillMp)
-        {
-            Attack(Target);
-            return;
-        }
-        Stat.Mp -= SkillMp;
-        UseSkill(Target);
-        return;
+        Attack(Target);
     }
-    Attack(Target);
+    else
+    {
+        UseSkill(Target);
+    }
 }
 
 void ACharacter::Heal(int Amount)

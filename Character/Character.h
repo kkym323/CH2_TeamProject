@@ -66,7 +66,7 @@ public:
     string GetName() { return Name; }
     void PrintName();
     int GetMaxHp() const { return Stat.MaxHp; }
-    
-private:
+    int GetAtk() { return Stat.Atk; }
+    int GetCritical() { return Stat.Critical; }
     int GetRandomInt();
 };
