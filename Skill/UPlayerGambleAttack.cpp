@@ -3,7 +3,7 @@
 #include <string>
 
 UPlayerGambleAttack::UPlayerGambleAttack(ACharacter* NewOwner)
-	:USkill(Owner)
+	:USkill(NewOwner, 20, "도박 스킬")
 {
 
 }

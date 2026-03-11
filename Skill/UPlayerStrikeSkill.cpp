@@ -3,7 +3,7 @@
 #include <string>
 
 UPlayerStrikeSkill::UPlayerStrikeSkill(ACharacter* NewOwner)
-	:USkill(NewOwner)
+	:USkill(NewOwner, 20, "베어가르기")
 {
 
 }
@@ -17,5 +17,5 @@ void UPlayerStrikeSkill::Play(ACharacter* Target)
 
     int FinalDamage = Target->TakeDamage(Owner->GetAtk() * 2);
     result.Damage = FinalDamage;
-    result.PrintMessage("이(가) 스킬을 사용했습니다! ");
+    result.PrintMessage("이(가) 베어가르기 스킬을 사용했습니다! ");
 }

@@ -1,8 +1,13 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
+#include <vector>
+#include <memory>
+#include "../Skill/Skill.h"
 
 using namespace std;
+
+class USkill;
 
 struct FUnitStat
 {
@@ -52,12 +57,11 @@ public:
 protected:
     string Name;
     FUnitStat Stat;
+    vector<unique_ptr<USkill>> Skills;
 
 public:
-    virtual FDamageResult Attack(ACharacter* Target);
     int TakeDamage(int DamageAmount);
-    virtual void UseSkill(ACharacter* Target) = 0;
-    void PlayTurn(ACharacter* Target);
+    virtual void PlayTurn(ACharacter* Target);
     void Heal(int Amount);
     void ShowStat();
     
@@ -68,5 +72,5 @@ public:
     int GetMaxHp() const { return Stat.MaxHp; }
     int GetAtk() { return Stat.Atk; }
     int GetCritical() { return Stat.Critical; }
-    int GetRandomInt();
+    int GetRandomInt(int Max = 100);
 };

@@ -3,7 +3,7 @@
 #include <string>
 
 UPlayerAttackSkill::UPlayerAttackSkill(ACharacter* NewOwner) 
-	:USkill(NewOwner)
+	:USkill(NewOwner, 0, "일반 공격")
 {
 
 }

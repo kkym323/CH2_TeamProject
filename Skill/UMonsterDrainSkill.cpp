@@ -3,7 +3,7 @@
 #include <string>
 
 UMonsterDrainSkill::UMonsterDrainSkill(ACharacter* NewOwner)
-	:USkill(NewOwner)
+	:USkill(NewOwner, 20, "흡수")
 {
 
 }
@@ -18,6 +18,6 @@ void UMonsterDrainSkill::Play(ACharacter* Target)
 	int FinalDamage = Target->TakeDamage(Owner->GetAtk());
 	result.Damage = FinalDamage;
 
-	result.PrintMessage("이(가) 스킬을 사용했습니다! ");
+	result.PrintMessage("이(가) 흡수 스킬을 사용했습니다! ");
 	Owner->Heal(FinalDamage);
 }

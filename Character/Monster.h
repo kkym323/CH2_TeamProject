@@ -5,6 +5,6 @@ class AMonster : public ACharacter
 {
 public:
     AMonster(const string& NewName, const FUnitStat& NewStat);
-    FDamageResult Attack(ACharacter* Target) override;
-    void UseSkill(ACharacter* Target) override;
+    ~AMonster() override;
+    void PlayTurn(ACharacter* Target) override;
 };
